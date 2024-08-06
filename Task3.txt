@@ -1,0 +1,37 @@
+#This file gives a detailed documentation/explanation of the code
+
+We import random to generate random numbers which can be used to generate random passwords
+
+1) generatePassword:
+- "alphabet" is a string containing all lowercase letters.
+- "passwords" is an empty list that will store the generated passwords.
+- The function loops over each length in pwlength:
+    For each length i, it initializes an empty string password.
+    It then generates a password by appending random lowercase letters to password until it reaches 
+the desired length "i".
+    After generating the initial password, it calls "replaceWithNumber" and "replaceWithUppercaseLetter"
+to modify the password.
+    The modified password is added to the "passwords" list.
+- Finally, the function returns the list of generated passwords.
+
+2) replaceWithNumber:
+- The for loop runs a random number of times between 1 and 2 (inclusive).
+- In each iteration:
+    A random index replace_index is chosen from the first half of the password.
+    The character at this index is replaced with a random digit (0-9).
+- After the loop completes all its iterations, the modified password is returned.
+
+3) replaceWithUppercaseLetter:
+- The for loop runs a random number of times between 1 and 2 (inclusive).
+- In each iteration:
+    A random index replace_index is chosen from the second half of the password.
+    The character at this index is replaced with its uppercase version.
+- After the loop completes all its iterations, the modified password is returned.
+
+4) Main:
+- The main function is the entry point of the program.
+- It prompts the user to enter the number of passwords to generate.
+- It initializes an empty list "passwordLengths".
+- It asks the user for the desired length of each password, ensuring a minimum length of 3.
+- It then calls "generatePassword" with the list of lengths to generate the passwords.
+- Finally, it prints each generated password.
