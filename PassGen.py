@@ -15,17 +15,18 @@ def generatePassword(pwlength):
         passwords.append(password) 
     return passwords
 
-def replaceWithNumber(pword):
-    for i in range(random.randrange(1,3)):
-        replace_index = random.randrange(len(pword)//2)
-        pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index+1:]
-        return pword
-    
 def replaceWithUppercaseLetter(pword):
-    for i in range(random.randrange(1,3)):
-        replace_index = random.randrange(len(pword)//2,len(pword))
-        pword = pword[0:replace_index] + pword[replace_index].upper() + pword[replace_index+1:]
-        return pword
+    for i in range(random.randrange(1, 3)):
+        replace_index = random.randrange(len(pword) // 2, len(pword))
+        pword = pword[0:replace_index] + pword[replace_index].upper() + pword[replace_index + 1:]
+    return pword
+    
+def replaceWithNumber(pword):
+    for i in range(random.randrange(1, 3)):
+        replace_index = random.randrange(len(pword) // 2)
+        pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index + 1:]
+    return pword
+
 def main():
     numPasswords = int(input("How many passwords do you want to generate? "))
     print("Generating " + str(numPasswords) + " passwords")
@@ -45,4 +46,3 @@ def main():
         print("Password #" + str(i+1) + " = " + Password[i])
 
 main()
-
